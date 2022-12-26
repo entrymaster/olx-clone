@@ -7,6 +7,7 @@ import { ProductSide } from "../ProductSide/ProductSide";
 import { SellerInfo } from "../SellerInfo/SellerInfo";
 import { CartState } from "../../../Context";
 import { useNavigate } from "react-router-dom";
+import { baseURL } from "../../config";
 
 export const Detail = (props) => {
   const product = props.product;
@@ -74,7 +75,7 @@ export const Detail = (props) => {
     console.log(user);
     try {
       response = await (
-        await fetch(`api/cart/buy`, {
+        await fetch(`${baseURL}/api/cart/buy`, {
           method: "PUT",
           headers: {
             Authorization: `Bearer ${user.token}`,

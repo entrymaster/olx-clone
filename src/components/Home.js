@@ -4,6 +4,7 @@ import Banner from "./Banner/Banner";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Posts from "./Posts/Posts";
+import { baseURL } from "./config";
 
 const Home = () => {
   const {
@@ -20,7 +21,7 @@ const Home = () => {
 
   const performAPICall = async () => {
     try {
-      var response = await (await fetch(`api/product`)).json();
+      var response = await (await fetch(`${baseURL}/api/product`)).json();
     } catch (e) {
       // errored = true;
     }

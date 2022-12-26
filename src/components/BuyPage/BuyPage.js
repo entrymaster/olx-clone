@@ -5,6 +5,7 @@ import { CartState } from "../../Context";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Product from "../Product/Product";
+import { baseURL } from "../config";
 import "./BuyPage.css";
 
 const BuyPage = () => {
@@ -17,7 +18,7 @@ const BuyPage = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      var response = await (await fetch(`api/cart/buy`, config)).json();
+      var response = await (await fetch(`${baseURL}/api/cart/buy`, config)).json();
     } catch (e) {
       // errored = true;
     }

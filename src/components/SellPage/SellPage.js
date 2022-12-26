@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { CartState } from "../../Context";
 import Footer from "../Footer/Footer";
 import Product from "../Product/Product";
+import { baseURL } from "../config";
 import "./SellPage.css";
 
 const SellPage = () => {
@@ -23,7 +24,7 @@ const SellPage = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      var response = await (await fetch(`api/cart/sold`, config)).json();
+      var response = await (await fetch(`${baseURL}/api/cart/sold`, config)).json();
     } catch (e) {
       // errored = true;
     }
